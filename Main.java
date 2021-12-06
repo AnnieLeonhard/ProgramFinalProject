@@ -26,8 +26,7 @@ public class Main {
      */
     public static void question1() {
         /*
-         * 1) Teacher speciality = Department if not exception thrown
-         * how it should be checked?
+         * 1) The teacher
          * Everytime we add a teacher, he should be added to a appropriate department,
          * and that department will
          * have a list of teachers. The list may be checked in loop if there is any
