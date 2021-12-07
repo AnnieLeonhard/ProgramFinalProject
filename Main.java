@@ -44,6 +44,18 @@ public class Main {
         // }
     }
 
+    //So when adding a teacher as dean, we should check if he is even from that department
+    //public boolean assignDean(ArrayList<depart>arr, Teacher t){
+    //for(Depart d: Arr){
+    //if(d.Teacher.contains(t)){
+    //d.setDean(t);
+    //}
+    //else
+    //{
+    //Label.setText("Teacher not in department");
+    //}  
+    //}
+
     /**
      * Teachers, students, and staffs are added/assigned to a department, first by
      * loading/reading from a text
