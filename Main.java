@@ -2,19 +2,20 @@ package person;
 
 /**
  *
- * @author Alihan
+ * @author Alihan Djamankulov, Craig Justin Balibalos
  */
 public class Main {
     // Main method
     public static void main(String[] args) {
-        Staff staff1 = new Staff();
-        staff1.setWorkload(37);
-        System.out.println(staff1.computePayRoll(1));
+        // Staff staff1 = new Staff();
+        // staff1.setWorkload(37);
+        // System.out.println(staff1.computePayRoll(1));
 
-        Teacher mathTeacher = new Teacher();
-        mathTeacher.setDegree("PhD");
-        System.out.println(mathTeacher.computePayRoll(100));
+        Teacher mathTeacher = new Teacher(12, "Aloi", 12, "m", "bobo Science", "PHD");
+        // System.out.println(mathTeacher.computePayRoll(100));
 
+        Department dep1 = new Department(123, "Computer Science", mathTeacher);
+        dep1.setDean(mathTeacher);
         // Observations
 
     }
@@ -22,39 +23,25 @@ public class Main {
     /**
      * A department has a dean, who should be a teacher of that department,
      * otherwise an exception must be
-     * thrown.
+     * thrown. Check Department class' setDean method
      */
     public static void question1() {
-        /*
-         * 1) The teacher
-         * Everytime we add a teacher, he should be added to a appropriate department,
-         * and that department will
-         * have a list of teachers. The list may be checked in loop if there is any
-         * teacher who is not from that department,
-         * so we can catch the wrong teacher and not put him in the department.
-         * We can compare department id in two classes or the specialty and the
-         * description of dep.
-         * skipppp
-         * for loop does not stop, should it be together with the javafx implementation?
-         */
-        Department maths = new Department();
-        // the logic for finding not right teacher
-        // if (maths.getDescription() != mathTeacher.getSpeciality()) {
+        // Check Department class' setDean method
         // throw new ArithmeticException("The teacher is not from this department!");
-        // }
     }
 
-    //So when adding a teacher as dean, we should check if he is even from that department
-    //public boolean assignDean(ArrayList<depart>arr, Teacher t){
-    //for(Depart d: Arr){
-    //if(d.Teacher.contains(t)){
-    //d.setDean(t);
-    //}
-    //else
-    //{
-    //Label.setText("Teacher not in department");
-    //}  
-    //}
+    // So when adding a teacher as dean, we should check if he is even from that
+    // department
+    // public boolean assignDean(ArrayList<depart>arr, Teacher t){
+    // for(Depart d: Arr){
+    // if(d.Teacher.contains(t)){
+    // d.setDean(t);
+    // }
+    // else
+    // {
+    // Label.setText("Teacher not in department");
+    // }
+    // }
 
     /**
      * Teachers, students, and staffs are added/assigned to a department, first by
@@ -119,4 +106,5 @@ public class Main {
     public static void question8() {
 
     }
+
 }

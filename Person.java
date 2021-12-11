@@ -7,7 +7,7 @@ package person;
 
 /**
  *
- * @author Alihan and Justin.
+ * @author Alihan Djamankulov, Craig Justin Balibalos
  *         The person class
  */
 public abstract class Person {
@@ -61,7 +61,7 @@ public abstract class Person {
     public String toString() {
         return String.format("I am a person");
     }
-  }
+}
 
 class Student extends Person {
     private String course;
@@ -95,10 +95,10 @@ class Student extends Person {
     public String toString() {
         return String
                 .format("The Student's details: \nStudentId: %d\n"
-                +"StudentName: %s\n"
-                +"StudentAge: %d\n"
-                +"StudentCourse: %s\n"
-                +"StudentSemester: %d", getId(), getName(), getAge(), getCourse(), getSemester()); // do
+                        + "StudentName: %s\n"
+                        + "StudentAge: %d\n"
+                        + "StudentCourse: %s\n"
+                        + "StudentSemester: %d", getId(), getName(), getAge(), getCourse(), getSemester()); // do
     }
 }
 
@@ -151,11 +151,11 @@ class Teacher extends Person implements Payroll {
     @Override
     public String toString() {
         return String.format("The Teacher's details: \n"
-        +"TeacherId: %d\n"
-        +"TeacherName: %s\n"
-        +"TeacherAge: %d\n"
-        +"TeacherSpeciality: %s\n"
-        +"TeacherDegree: %d", getId(), getName(), getAge(), getSpeciality(), getDegree());// do
+                + "TeacherId: %d\n"
+                + "TeacherName: %s\n"
+                + "TeacherAge: %d\n"
+                + "TeacherSpeciality: %s\n"
+                + "TeacherDegree: %s", getId(), getName(), getAge(), getSpeciality(), getDegree());// do
     }
 
 }
@@ -199,11 +199,11 @@ class Staff extends Person implements Payroll {
     @Override
     public String toString() {
         return String.format("The Staff's details: \n"
-        +"StaffId: %d\n"
-        +"StaffName: %s\n"
-        +"StaffAge: %d\n"
-        +"StaffDuty: %s\n"
-        +"StaffWorkload: %d", getId(), getName(), getAge(), getDuty(), getWorkload());
+                + "StaffId: %d\n"
+                + "StaffName: %s\n"
+                + "StaffAge: %d\n"
+                + "StaffDuty: %s\n"
+                + "StaffWorkload: %d", getId(), getName(), getAge(), getDuty(), getWorkload());
     }
 }
 
@@ -211,41 +211,47 @@ interface Payroll {
     public double computePayRoll(double salary);
 }
 
-//You have to firstly create department and then people like teachers, students
-//If there are no people, ask user to load department first by message
+// You have to firstly create department and then people like teachers, students
+// If there are no people, ask user to load department first by message
 
-//question with department_id in student: adding a student from the file given to a appropriate department
-//we split the info from a file to 4 different objects and put them in arraylist
+// question with department_id in student: adding a student from the file given
+// to a appropriate department
+// we split the info from a file to 4 different objects and put them in
+// arraylist
 // String s = line.split(;);
 // s[0] = id
 // s[1] = name
 // s[2] = age
 // s[3] = department.id
 
-//1 method for adding a student to department
-//finding a student in the deptList -> studentList of specific department, which is found by id
-//loop creating a student
-//for(depart d: deptList){ d is the department name
-//if(d.getId()==s[3]){ if we find department with the same id as student depId -> s[3],then we add the student to the student list of the department.
-//d.stdList.add(new Student(s[0], s[1], s[2]);
-//}
-//}
+// 1 method for adding a student to department
+// finding a student in the deptList -> studentList of specific department,
+// which is found by id
+// loop creating a student
+// for(depart d: deptList){ d is the department name
+// if(d.getId()==s[3]){ if we find department with the same id as student depId
+// -> s[3],then we add the student to the student list of the department.
+// d.stdList.add(new Student(s[0], s[1], s[2]);
+// }
+// }
 
-//this method is more general than the last one. use either this either the other one
-//assigning student with department id, what is Arrd?
-//public boolean assignStudent(ArrayList<Depart>Arrd, Student s , int id (values from s[3])){
-//for( Department d: Arrd){
-//if(d.getId() == id){
-//d.StudentList.add(s);
-//return true;
-//}
-//return false;
-//}
-//}
+// this method is more general than the last one. use either this either the
+// other one
+// assigning student with department id, what is Arrd?
+// public boolean assignStudent(ArrayList<Depart>Arrd, Student s , int id
+// (values from s[3])){
+// for( Department d: Arrd){
+// if(d.getId() == id){
+// d.StudentList.add(s);
+// return true;
+// }
+// return false;
+// }
+// }
 
-//javafx message
-//if(assign Student){
-//Label.setText("Student successfully added"); Label from javafx
-//}
-//else {label.setText("Student not added");
-//}
+// javafx message
+// if(assign Student){
+// Label.setText("Student successfully added"); Label from javafx
+// }
+// else {label.setText("Student not added");
+// }
