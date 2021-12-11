@@ -83,6 +83,9 @@ public class Department {
         StaffList = staffList;
     }
 
+    /**
+     * I dont know how to print the dean for the department
+     */
     @Override
     public String toString() {
         // String s = getDean().toString();

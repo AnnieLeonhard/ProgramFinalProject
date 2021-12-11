@@ -1,4 +1,5 @@
 package person;
+import java.io.*;
 
 /**
  *
@@ -7,17 +8,32 @@ package person;
 public class Main {
     // Main method
     public static void main(String[] args) {
-        // Staff staff1 = new Staff();
-        // staff1.setWorkload(37);
-        // System.out.println(staff1.computePayRoll(1));
 
-        Teacher mathTeacher = new Teacher(12, "Aloi", 12, "m", "bobo Science", "PHD");
-        // System.out.println(mathTeacher.computePayRoll(100));
-
-        Department dep1 = new Department(123, "Computer Science", mathTeacher);
-        dep1.setDean(mathTeacher);
         // Observations
+        // question1();
+        
+        question2();
+    }
 
+    public static void initDepartments(){
+        Department computerVision = new Department();
+        computerVision.setDescription("computer vision");
+        Department preHistory = new Department();
+        preHistory.setDescription("pre-history");
+        Department topology = new Department();
+        topology.setDescription("topology");
+        Department microEconomy = new Department();
+        microEconomy.setDescription("micro economy");
+        Department computerScience = new Department();
+        computerScience.setDescription("computer science");
+        Department maths = new Department();
+        maths.setDescription("mathematic");
+        Department physics = new Department();
+        physics.setDescription("Physics");
+        Department history = new Department();
+        history.setDescription("History");
+        Department computerVision = new Department();
+        computerVision.setDescription("computer vision");
     }
 
     /**
@@ -27,21 +43,10 @@ public class Main {
      */
     public static void question1() {
         // Check Department class' setDean method
-        // throw new ArithmeticException("The teacher is not from this department!");
+        Teacher mathTeacher = new Teacher(12, "Aloi", 12, "m", "bobo Science", "PHD");
+        Department dep1 = new Department(123, "Computer Science", mathTeacher);
+        dep1.setDean(mathTeacher);
     }
-
-    // So when adding a teacher as dean, we should check if he is even from that
-    // department
-    // public boolean assignDean(ArrayList<depart>arr, Teacher t){
-    // for(Depart d: Arr){
-    // if(d.Teacher.contains(t)){
-    // d.setDean(t);
-    // }
-    // else
-    // {
-    // Label.setText("Teacher not in department");
-    // }
-    // }
 
     /**
      * Teachers, students, and staffs are added/assigned to a department, first by
@@ -51,7 +56,19 @@ public class Main {
      * added/assigned using the graphical user interface.
      */
     public static void question2() {
-        // idk - check solution in stackoverflow(Scanner)
+        //Staff loading
+        try{
+            File staffPath = new File("C:\\Vanier21-22\\Programming\\FinalProject\\Staff.txt");
+            BufferedReader staffRead = new BufferedReader(new FileReader(staffPath));
+            System.out.println("Found the file");
+            while(staffRead.readLine() != null){
+                
+            }
+        }catch(Exception ex){
+            System.out.println("Did not found the file");
+            ex.printStackTrace();
+        }
+
     }
 
     /**
