@@ -44,3 +44,4 @@ Label.setText("Student successfully added"); Label from javafx
 }
 else {label.setText("Student not added");
 }
+

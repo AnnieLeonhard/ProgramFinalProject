@@ -1,39 +1,50 @@
 package person;
-import java.io.*;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.util.ArrayList;
+
+import person.ProgramProject.Menu;
+import person.ProgramProject.Teacher;
+import person.ProgramProject.Department;
 
 /**
  *
  * @author Alihan Djamankulov, Craig Justin Balibalos
  */
 public class Main {
-    // Main method
+
+    // Department list
+    private static ArrayList<Department> deptList = new ArrayList<Department>();
+
+    public static ArrayList<Department> getDeptList() {
+        return deptList;
+    }
+
+    public static void setDeptList(ArrayList<Department> deptList) {
+        Main.deptList = deptList;
+    }
+
     public static void main(String[] args) {
 
         // Observations
         // question1();
-        
-        question2();
+        // initDepartments();
+        // question2();
+        Menu.addTeacher();
     }
 
-    public static void initDepartments(){
-        Department computerVision = new Department();
-        computerVision.setDescription("computer vision");
-        Department preHistory = new Department();
-        preHistory.setDescription("pre-history");
-        Department topology = new Department();
-        topology.setDescription("topology");
-        Department microEconomy = new Department();
-        microEconomy.setDescription("micro economy");
-        Department computerScience = new Department();
-        computerScience.setDescription("computer science");
-        Department maths = new Department();
-        maths.setDescription("mathematic");
-        Department physics = new Department();
-        physics.setDescription("Physics");
-        Department history = new Department();
-        history.setDescription("History");
-        Department computerVision = new Department();
-        computerVision.setDescription("computer vision");
+    /**
+     * Initiates all the departments
+     */
+    public static void initDepartments() {
+        Department pureScience = new Department(1001, "All the Pure sciences");
+        Department socialScience = new Department(1003, "All the social sciences");
+        Department business = new Department(1005, "Business");
+        getDeptList().add(pureScience);
+        getDeptList().add(socialScience);
+        getDeptList().add(business);
     }
 
     /**
@@ -43,9 +54,10 @@ public class Main {
      */
     public static void question1() {
         // Check Department class' setDean method
-        Teacher mathTeacher = new Teacher(12, "Aloi", 12, "m", "bobo Science", "PHD");
-        Department dep1 = new Department(123, "Computer Science", mathTeacher);
-        dep1.setDean(mathTeacher);
+        // Teacher mathTeacher = new Teacher(12, "Aloi", 12, "m", "bobo Science",
+        // "PHD");
+        // Department dep1 = new Department(123, "Computer Science", mathTeacher);
+        // dep1.setDean(mathTeacher);
     }
 
     /**
@@ -56,15 +68,27 @@ public class Main {
      * added/assigned using the graphical user interface.
      */
     public static void question2() {
-        //Staff loading
-        try{
+        // Staff loading
+        try {
             File staffPath = new File("C:\\Vanier21-22\\Programming\\FinalProject\\Staff.txt");
             BufferedReader staffRead = new BufferedReader(new FileReader(staffPath));
             System.out.println("Found the file");
-            while(staffRead.readLine() != null){
-                
+            String s;
+            try {
+                while ((s = staffRead.readLine()) != null) {
+                    // String s = staffRead;
+                    // String[] staffLine = s.split();
+                    String[] staffArr = s.split(",");
+                    for (String a : staffArr) {
+                        System.out.println(a);
+                    }
+                }
+            } catch (Exception ex) {
+                System.out.println("Something wrong with reading file");
+                ex.printStackTrace();
             }
-        }catch(Exception ex){
+
+        } catch (Exception ex) {
             System.out.println("Did not found the file");
             ex.printStackTrace();
         }
@@ -77,7 +101,7 @@ public class Main {
      * id) should rise/throw an exception.
      */
     public static void question3() {
-        // how we should check that in real time?
+
     }
 
     /**

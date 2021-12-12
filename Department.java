@@ -1,4 +1,4 @@
-package person;
+package person.ProgramProject;
 
 import java.util.ArrayList;
 
@@ -11,14 +11,19 @@ public class Department {
     private Teacher dean;
 
     // Fake database
-    private static ArrayList<Teacher> TeacherList = new ArrayList<Teacher>();
-    private static ArrayList<Student> StudentList = new ArrayList<Student>();
-    private static ArrayList<Staff> StaffList = new ArrayList<Staff>();
+    private ArrayList<Teacher> TeacherList = new ArrayList<Teacher>();
+    private ArrayList<Student> StudentList = new ArrayList<Student>();
+    private ArrayList<Staff> StaffList = new ArrayList<Staff>();
 
     public Department(int id, String description, Teacher dean) {
         this.id = id;
         this.description = description;
         this.dean = dean;
+    }
+
+    public Department(int id, String description) {
+        this.id = id;
+        this.description = description;
     }
 
     public Department() {
@@ -59,27 +64,27 @@ public class Department {
         }
     }
 
-    public static ArrayList<Teacher> getTeacherList() {
+    public ArrayList<Teacher> getTeacherList() {
         return TeacherList;
     }
 
-    public static void setTeacherList(ArrayList<Teacher> teacherList) {
+    public void setTeacherList(ArrayList<Teacher> teacherList) {
         TeacherList = teacherList;
     }
 
-    public static ArrayList<Student> getStudentList() {
+    public ArrayList<Student> getStudentList() {
         return StudentList;
     }
 
-    public static void setStudentList(ArrayList<Student> studentList) {
+    public void setStudentList(ArrayList<Student> studentList) {
         StudentList = studentList;
     }
 
-    public static ArrayList<Staff> getStaffList() {
+    public ArrayList<Staff> getStaffList() {
         return StaffList;
     }
 
-    public static void setStaffList(ArrayList<Staff> staffList) {
+    public void setStaffList(ArrayList<Staff> staffList) {
         StaffList = staffList;
     }
 
